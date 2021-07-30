@@ -37,7 +37,7 @@ public class ${serviceGenerateInfo.modelNameUpperCamel}ServiceImpl implements ${
 
     @Override
     public Result${"<"}${serviceGenerateInfo.modelNameUpperCamel}${">"} detail(Integer id) {
-        // TODO 替换DTO简化参数，仅保留前段需要展示字段
+        // TODO 替换DTO简化参数，仅保留前端需要展示字段
         return Result.success(${serviceGenerateInfo.modelNameLowerCamel}Mapper.queryByID(id));
     }
 

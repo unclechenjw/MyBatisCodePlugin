@@ -23,7 +23,7 @@ public class ${controllerGenerateInfo.modelNameUpperCamel}Controller {
      * 新增
      *
      * @param : ${controllerGenerateInfo.modelNameLowerCamel}
-     * @return: Result${"<"}String${">"}
+     * @return: Result
      **/
     @PostMapping
     public Result insert(@RequestBody ${controllerGenerateInfo.modelNameUpperCamel} ${controllerGenerateInfo.modelNameLowerCamel}) {
@@ -34,7 +34,7 @@ public class ${controllerGenerateInfo.modelNameUpperCamel}Controller {
      * 更新
      *
      * @param : ${controllerGenerateInfo.modelNameLowerCamel}
-     * @return: Result${"<"}String${">"}
+     * @return: Result
      **/
     @PutMapping
     public Result update(@RequestBody ${controllerGenerateInfo.modelNameUpperCamel} ${controllerGenerateInfo.modelNameLowerCamel}) {
