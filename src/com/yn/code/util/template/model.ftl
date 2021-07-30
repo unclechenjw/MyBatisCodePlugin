@@ -14,6 +14,9 @@ import ${import};
  */
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ${modelGenerateInfo.modelNameUpperCamel} {
     <#list modelGenerateInfo.columnList as column>
 

@@ -5,9 +5,8 @@ import ${serviceGenerateInfo.modelPackage}.${serviceGenerateInfo.modelNameUpperC
 import ${serviceGenerateInfo.servicePackage}.${serviceGenerateInfo.modelNameUpperCamel}Service;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import  com.zimo.commons.dto.Result;
+import com.zimo.commons.global.model.dto.Result;
 import java.util.List;
-
 
 /**
 * ${serviceGenerateInfo.modelNameUpperCamel}ServiceImpl
@@ -22,14 +21,14 @@ public class ${serviceGenerateInfo.modelNameUpperCamel}ServiceImpl implements ${
     private ${serviceGenerateInfo.modelNameUpperCamel}Mapper ${serviceGenerateInfo.modelNameLowerCamel}Mapper;
 
     @Override
-    public Result${"<"}String${">"} insert(${serviceGenerateInfo.modelNameUpperCamel} ${serviceGenerateInfo.modelNameLowerCamel}) {
-        ${serviceGenerateInfo.modelNameLowerCamel}Mapper.insert(${serviceGenerateInfo.modelNameLowerCamel});
+    public Result insert(${serviceGenerateInfo.modelNameUpperCamel} insert) {
+        ${serviceGenerateInfo.modelNameLowerCamel}Mapper.insert(insert);
         return Result.success("新增成功");
     }
 
     @Override
-    public Result${"<"}String${">"} update(${serviceGenerateInfo.modelNameUpperCamel} ${serviceGenerateInfo.modelNameLowerCamel}) {
-        ${serviceGenerateInfo.modelNameLowerCamel}Mapper.update(${serviceGenerateInfo.modelNameLowerCamel});
+    public Result update(${serviceGenerateInfo.modelNameUpperCamel} update) {
+        ${serviceGenerateInfo.modelNameLowerCamel}Mapper.update(update);
         return Result.success("修改成功");
     }
 

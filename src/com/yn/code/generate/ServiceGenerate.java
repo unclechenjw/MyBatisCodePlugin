@@ -1,13 +1,16 @@
 package com.yn.code.generate;
 
-import com.yn.code.model.*;
+import com.yn.code.model.ConfigModel;
+import com.yn.code.model.ServiceGenerateInfo;
+import com.yn.code.model.TableInfo;
 import com.yn.code.util.CommonUtil;
-import com.yn.code.util.DataTypeEnum;
 import com.yn.code.util.FreeMarkUtil;
 import com.yn.code.util.MyException;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 这里是类描述
@@ -31,7 +34,7 @@ public class ServiceGenerate {
         serviceGenerateInfo.setModelPackage(CommonUtil.getPackageNameByPath(configModel.getModelPath()));
         serviceGenerateInfo.setMapperPackage(CommonUtil.getPackageNameByPath(configModel.getMapperJavaPath()));
         serviceGenerateInfo.setServicePackage(CommonUtil.getPackageNameByPath(configModel.getServicePath()));
-        serviceGenerateInfo.setDate(new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new Date()));
+        serviceGenerateInfo.setDate(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now()));
         serviceGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
         serviceGenerateInfo.setModelNameLowerCamel(CommonUtil.getNameLowerCamel(tableInfo.getTableName()));
         serviceGenerateInfo.setTableComment(tableInfo.getTableComment());

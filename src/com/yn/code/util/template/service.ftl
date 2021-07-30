@@ -1,6 +1,6 @@
 package ${serviceGenerateInfo.basePackage};
 import ${serviceGenerateInfo.modelPackage}.${serviceGenerateInfo.modelNameUpperCamel};
-import  com.zimo.commons.dto.Result;
+import com.zimo.commons.global.model.dto.Result;
 import java.util.List;
 
 /**
@@ -13,28 +13,32 @@ public interface ${serviceGenerateInfo.modelNameUpperCamel}Service {
 
     /**
      * 新增
-     * @param ${serviceGenerateInfo.modelNameLowerCamel}
+     *
+     * @param insert
      * @return String
      */
-    Result${"<"}String${">"} insert(${serviceGenerateInfo.modelNameUpperCamel} ${serviceGenerateInfo.modelNameLowerCamel});
+    Result insert(${serviceGenerateInfo.modelNameUpperCamel} insert);
 
     /**
      * 修改
-     * @param ${serviceGenerateInfo.modelNameLowerCamel}
+     *
+     * @param update
      * @return String
      */
-    Result${"<"}String${">"} update(${serviceGenerateInfo.modelNameUpperCamel} ${serviceGenerateInfo.modelNameLowerCamel});
+    Result update(${serviceGenerateInfo.modelNameUpperCamel} update);
 
     /**
      * 查询
+     *
      * @param id
      * @return ${serviceGenerateInfo.modelNameUpperCamel}
      */
     Result${"<"}${serviceGenerateInfo.modelNameUpperCamel}${">"} detail(Integer id);
 
     /**
-    * 查询列表
-    * @return ${serviceGenerateInfo.modelNameUpperCamel}
-    */
+     * 查询列表
+     *
+     * @return ${serviceGenerateInfo.modelNameUpperCamel}
+     */
     Result${"<List<"}${serviceGenerateInfo.modelNameUpperCamel}${">>"} list();
 }

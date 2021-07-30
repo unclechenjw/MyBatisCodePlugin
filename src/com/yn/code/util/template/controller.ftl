@@ -3,7 +3,7 @@ import ${controllerGenerateInfo.modelPackage}.${controllerGenerateInfo.modelName
 import ${controllerGenerateInfo.servicePackage}.${controllerGenerateInfo.modelNameUpperCamel}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import  com.zimo.commons.dto.Result;
+import com.zimo.commons.global.model.dto.Result;
 import java.util.List;
 
 /**
@@ -21,26 +21,29 @@ public class ${controllerGenerateInfo.modelNameUpperCamel}Controller {
 
     /**
      * 新增
+     *
      * @param : ${controllerGenerateInfo.modelNameLowerCamel}
      * @return: Result${"<"}String${">"}
      **/
     @PostMapping
-    public Result${"<"}String${">"} insert(@ModelAttribute ${controllerGenerateInfo.modelNameUpperCamel} ${controllerGenerateInfo.modelNameLowerCamel}) {
+    public Result insert(@RequestBody ${controllerGenerateInfo.modelNameUpperCamel} ${controllerGenerateInfo.modelNameLowerCamel}) {
         return ${controllerGenerateInfo.modelNameLowerCamel}Service.insert(${controllerGenerateInfo.modelNameLowerCamel});
     }
 
     /**
      * 更新
+     *
      * @param : ${controllerGenerateInfo.modelNameLowerCamel}
      * @return: Result${"<"}String${">"}
      **/
     @PutMapping
-    public Result${"<"}String${">"} update(@ModelAttribute ${controllerGenerateInfo.modelNameUpperCamel} ${controllerGenerateInfo.modelNameLowerCamel}) {
+    public Result update(@RequestBody ${controllerGenerateInfo.modelNameUpperCamel} ${controllerGenerateInfo.modelNameLowerCamel}) {
         return ${controllerGenerateInfo.modelNameLowerCamel}Service.update(${controllerGenerateInfo.modelNameLowerCamel});
     }
 
     /**
      * 详情
+     *
      * @param : id
      * @return: Result${"<"}${controllerGenerateInfo.modelNameUpperCamel}${">"}
      **/
@@ -51,6 +54,7 @@ public class ${controllerGenerateInfo.modelNameUpperCamel}Controller {
 
     /**
      * 查询列表
+     *
      * @param :
      * @return: Result${"<List<"}${controllerGenerateInfo.modelNameUpperCamel}${">>"}
      **/

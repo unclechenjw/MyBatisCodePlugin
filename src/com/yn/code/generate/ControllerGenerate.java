@@ -34,7 +34,7 @@ public class ControllerGenerate {
         controllerGenerateInfo.setModelNameLowerCamel(CommonUtil.getNameLowerCamel(tableInfo.getTableName()));
         controllerGenerateInfo.setTableComment(tableInfo.getTableComment());
         controllerGenerateInfo.setTableName(tableInfo.getTableName());
-        controllerGenerateInfo.setBaseRequestMapping(CommonUtil.getBaseRequestMapping(tableInfo.getTableName()));
+        controllerGenerateInfo.setBaseRequestMapping(configModel.getSign());
 
         Map<String, Object> root = new HashMap<>(1);
         root.put("controllerGenerateInfo", controllerGenerateInfo);
