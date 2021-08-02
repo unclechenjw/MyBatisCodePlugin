@@ -187,7 +187,8 @@ public class CommonUtil {
         List<File> fileResult = new ArrayList<>();
         for (File file: files) {
             if(file.isDirectory()){
-                if(type == 2 && file.getName().equals(keyWords)){
+                if(type == 2 && file.getName().equals(keyWords) &&
+                        !file.getAbsolutePath().matches(".*?target.*")){
                     fileResult.add(file);
                 }
                 fileResult.addAll(searchFiles(file.getAbsolutePath(), type, keyWords));
