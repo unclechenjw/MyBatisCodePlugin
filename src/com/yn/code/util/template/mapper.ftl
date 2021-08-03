@@ -20,7 +20,7 @@ public interface ${mapperGenerateInfo.moduleName}Mapper {
      *
      * @param insert
      * @return 新增条数
-     */
+     **/
     int insert(${mapperGenerateInfo.moduleName}PO insert);
 
     /**
@@ -28,7 +28,7 @@ public interface ${mapperGenerateInfo.moduleName}Mapper {
      *
      * @param update
      * @return 修改条数
-     */
+     **/
     int update(${mapperGenerateInfo.moduleName}PO update);
 
     /**
@@ -36,13 +36,13 @@ public interface ${mapperGenerateInfo.moduleName}Mapper {
      *
      * @param id
      * @return ${mapperGenerateInfo.moduleName}
-     */
+     **/
     ${mapperGenerateInfo.moduleName}Detail queryByID(${mapperGenerateInfo.primaryKeyJavaTypeName} id);
 
     /**
      * 查询列表
      *
      * @return ${mapperGenerateInfo.moduleName}
-     */
-    List<${mapperGenerateInfo.moduleName}${"Brief>"} queryList(${mapperGenerateInfo.moduleName}Query query);
+     **/
+    List<${mapperGenerateInfo.moduleName}${"Brief>"} list(${mapperGenerateInfo.moduleName}Query query);
 }

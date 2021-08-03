@@ -8,7 +8,7 @@ import ${serviceGenerateInfo.modelPackage}.param.${serviceGenerateInfo.moduleNam
 import ${serviceGenerateInfo.modelPackage}.param.${serviceGenerateInfo.moduleName}Update;
 import ${serviceGenerateInfo.modelPackage}.dto.${serviceGenerateInfo.moduleName}Brief;
 import ${serviceGenerateInfo.modelPackage}.dto.${serviceGenerateInfo.moduleName}Detail;
-import com.zimo.session.app.SessionUtil;
+import com.zimo.session.bms.SessionUtil;
 import com.zimo.commons.global.model.dto.Result;
 import com.zimo.commons.global.util.PageUtil;
 
@@ -20,11 +20,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
-* ${serviceGenerateInfo.moduleName}ServiceImpl
-*
-* @author : ${serviceGenerateInfo.author}
-* @date: ${serviceGenerateInfo.date}
-**/
+ * ${serviceGenerateInfo.tableComment}服务
+ *
+ * @author : ${serviceGenerateInfo.author}
+ * @date: ${serviceGenerateInfo.date}
+ **/
 @Service
 public class ${serviceGenerateInfo.moduleName}ServiceImpl implements ${serviceGenerateInfo.moduleName}Service {
 
@@ -64,6 +64,6 @@ public class ${serviceGenerateInfo.moduleName}ServiceImpl implements ${serviceGe
     @Override
     public Result${"<List<"}${serviceGenerateInfo.moduleName}Brief${">>"} list(${serviceGenerateInfo.moduleName}Query query) {
         PageUtil.startPage(query);
-        return Result.success(${serviceGenerateInfo.moduleNameLower}Mapper.queryList(query));
+        return Result.success(${serviceGenerateInfo.moduleNameLower}Mapper.list(query));
     }
 }

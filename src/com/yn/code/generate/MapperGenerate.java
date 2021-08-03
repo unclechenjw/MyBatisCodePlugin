@@ -3,8 +3,12 @@ package com.yn.code.generate;
 import com.yn.code.model.*;
 import com.yn.code.util.*;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 这里是类描述
@@ -26,7 +30,7 @@ public class MapperGenerate {
         mapperGenerateInfo.setAuthor(configModel.getAuthor());
         mapperGenerateInfo.setModuleName(CommonUtil.getNameUpperCamel(configModel.getSign()));
         mapperGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getMapperJavaPath()));
-        mapperGenerateInfo.setDate(new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new Date()));
+        mapperGenerateInfo.setDate(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now()));
         mapperGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
         mapperGenerateInfo.setModelNameLowerCamel(CommonUtil.getNameLowerCamel(tableInfo.getTableName()));
         mapperGenerateInfo.setTableComment(tableInfo.getTableComment());

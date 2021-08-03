@@ -1,21 +1,18 @@
-package ${queryGenerateInfo.basePackage}.dto;
+package ${modelGenerateInfo.basePackage}.dto;
 
 import com.zimo.commons.global.model.dto.BasePage;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * ${queryGenerateInfo.moduleName}
+ * ${modelGenerateInfo.tableComment}摘要
  *
- * @author : ${queryGenerateInfo.author}
- * @date: ${queryGenerateInfo.date}
+ * @author : ${modelGenerateInfo.author}
+ * @date: ${modelGenerateInfo.date}
  **/
 @Getter
 @Setter
-public class ${queryGenerateInfo.moduleName}Brief extends BasePage {
+public class ${modelGenerateInfo.moduleName}Brief {
 
-    /**
-     * 查询关键字
-     **/
-    private String keyword;
+    // TODO 补充需要字段，删除无用的类、字段
 }

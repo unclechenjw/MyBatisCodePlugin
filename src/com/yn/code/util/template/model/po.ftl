@@ -8,9 +8,10 @@ import ${import};
 import java.time.LocalDateTime;
 
 /**
- * ${modelGenerateInfo.tableComment}
- * 表：  ${modelGenerateInfo.tableName}
- * @author  ${modelGenerateInfo.author}
+ * ${modelGenerateInfo.tableComment}PO实体
+ *
+ * 表：${modelGenerateInfo.tableName}
+ * @author ${modelGenerateInfo.author}
  * @date ${modelGenerateInfo.date}
  **/
 @Getter

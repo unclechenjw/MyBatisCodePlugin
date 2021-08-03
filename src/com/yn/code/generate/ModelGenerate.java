@@ -6,8 +6,12 @@ import com.yn.code.util.DataTypeEnum;
 import com.yn.code.util.FreeMarkUtil;
 import com.yn.code.util.MyException;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**
  * 这里是类描述
  *
@@ -24,11 +28,12 @@ public class ModelGenerate {
     }
 
     public void generate() throws MyException{
+        String moduleName = CommonUtil.getNameUpperCamel(configModel.getSign());
         ModelGenerateInfo modelGenerateInfo = new ModelGenerateInfo();
         modelGenerateInfo.setAuthor(configModel.getAuthor());
-        modelGenerateInfo.setModuleName(CommonUtil.getNameUpperCamel(configModel.getSign()));
-        modelGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getModelPath()) + "/po");
-        modelGenerateInfo.setDate(new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new Date()));
+        modelGenerateInfo.setModuleName(moduleName);
+        modelGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getModelPath()));
+        modelGenerateInfo.setDate(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now()));
         modelGenerateInfo.setTableComment(tableInfo.getTableComment());
         modelGenerateInfo.setTableName(tableInfo.getTableName());
         List<ModelGenerateColumnInfo> modelGenerateColumnInfos = new ArrayList<>();
@@ -49,7 +54,17 @@ public class ModelGenerate {
         modelGenerateInfo.setImportList(importList);
         Map<String, Object> root = new HashMap<>(1);
         root.put("modelGenerateInfo", modelGenerateInfo);
-        String fileName = CommonUtil.getNameUpperCamel(modelGenerateInfo.getModuleName()) + "PO.java";
-        FreeMarkUtil.generateFile(root, "model/po.ftl", configModel.getModelPath(), fileName);
+        FreeMarkUtil.generateFile(root, "model/po.ftl", configModel.getModelPath() + "/po/",
+                moduleName + "PO.java");
+        FreeMarkUtil.generateFile(root, "model/query.ftl", configModel.getModelPath() + "/param/",
+                moduleName + "Query.java");
+        FreeMarkUtil.generateFile(root, "model/update.ftl", configModel.getModelPath() + "/param/",
+                moduleName + "Update.java");
+        FreeMarkUtil.generateFile(root, "model/insert.ftl", configModel.getModelPath() + "/param/",
+                moduleName + "Insert.java");
+        FreeMarkUtil.generateFile(root, "model/detail.ftl", configModel.getModelPath() + "/dto/",
+                moduleName + "Detail.java");
+        FreeMarkUtil.generateFile(root, "model/brief.ftl", configModel.getModelPath() + "/dto/",
+                moduleName + "Brief.java");
     }
 }

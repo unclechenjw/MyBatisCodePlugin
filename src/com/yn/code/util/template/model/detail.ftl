@@ -1,17 +1,17 @@
-package ${queryGenerateInfo.basePackage}.dto;
+package ${modelGenerateInfo.basePackage}.dto;
 
 import com.zimo.commons.global.model.dto.BasePage;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * ${queryGenerateInfo.moduleName}
+ * ${modelGenerateInfo.tableComment}详情
  *
- * @author : ${queryGenerateInfo.author}
- * @date: ${queryGenerateInfo.date}
+ * @author : ${modelGenerateInfo.author}
+ * @date: ${modelGenerateInfo.date}
  **/
 @Getter
 @Setter
-public class ${queryGenerateInfo.moduleName}Detail extends BasePage {
+public class ${modelGenerateInfo.moduleName}Detail {
 
 }

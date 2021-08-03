@@ -39,7 +39,7 @@ public class ServiceGenerate {
         serviceGenerateInfo.setDate(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now()));
 //        serviceGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
 //        serviceGenerateInfo.setModelNameLowerCamel(CommonUtil.getNameLowerCamel(tableInfo.getTableName()));
-//        serviceGenerateInfo.setTableComment(tableInfo.getTableComment());
+        serviceGenerateInfo.setTableComment(tableInfo.getTableComment());
 //        serviceGenerateInfo.setTableName(tableInfo.getTableName());
 
         Map<String, Object> root = new HashMap<>(1);

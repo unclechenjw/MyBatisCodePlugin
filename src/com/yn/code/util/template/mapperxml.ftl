@@ -38,7 +38,7 @@
          WHERE ${mapperGenerateInfo.primaryKey} = ${"#\{"}${mapperGenerateInfo.primaryKeyCamel},jdbcType=${mapperGenerateInfo.primaryKeyJdbcType}${"}"}
     </select>
 
-    <select id="queryList" resultType="${mapperGenerateInfo.modelPath}.dto.${mapperGenerateInfo.moduleName}Brief">
+    <select id="list" resultType="${mapperGenerateInfo.modelPath}.dto.${mapperGenerateInfo.moduleName}Brief">
         SELECT <#list mapperGenerateInfo.columnList as column><#if column_has_next>${column.columnName} AS ${column.columnCamelName},${"\n               "}<#else>${column.columnName} AS ${column.columnCamelName}</#if></#list>
           FROM ${mapperGenerateInfo.tableName}
     </select>

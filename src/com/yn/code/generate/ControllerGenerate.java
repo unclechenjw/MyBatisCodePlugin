@@ -1,12 +1,16 @@
 package com.yn.code.generate;
 
-import com.yn.code.model.*;
+import com.yn.code.model.ConfigModel;
+import com.yn.code.model.ControllerGenerateInfo;
+import com.yn.code.model.TableInfo;
 import com.yn.code.util.CommonUtil;
 import com.yn.code.util.FreeMarkUtil;
 import com.yn.code.util.MyException;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 这里是类描述
@@ -31,11 +35,11 @@ public class ControllerGenerate {
         controllerGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getControllerPath()));
         controllerGenerateInfo.setServicePackage(CommonUtil.getPackageNameByPath(configModel.getServicePath()));
         controllerGenerateInfo.setModelPackage(CommonUtil.getPackageNameByPath(configModel.getModelPath()));
-        controllerGenerateInfo.setDate(new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new Date()));
+        controllerGenerateInfo.setDate(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now()));
 //        controllerGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
 //        controllerGenerateInfo.setModelNameLowerCamel(CommonUtil.getNameLowerCamel(tableInfo.getTableName()));
 //        controllerGenerateInfo.setQueryObjectNameLowerCamel(CommonUtil.getNameLowerCamel(configModel.getSign())+"Query");
-//        controllerGenerateInfo.setTableComment(tableInfo.getTableComment());
+        controllerGenerateInfo.setTableComment(tableInfo.getTableComment());
 //        controllerGenerateInfo.setTableName(tableInfo.getTableName());
         controllerGenerateInfo.setBaseRequestMapping(configModel.getSign());
 

@@ -8,7 +8,7 @@ import com.zimo.commons.global.model.dto.Result;
 import java.util.List;
 
 /**
- * ${serviceGenerateInfo.moduleName}Service
+ * ${serviceGenerateInfo.tableComment}服务
  *
  * @author : ${serviceGenerateInfo.author}
  * @date: ${serviceGenerateInfo.date}
@@ -20,7 +20,7 @@ public interface ${serviceGenerateInfo.moduleName}Service {
      *
      * @param insert
      * @return String
-     */
+     **/
     Result insert(${serviceGenerateInfo.moduleName}Insert insert);
 
     /**
@@ -28,7 +28,7 @@ public interface ${serviceGenerateInfo.moduleName}Service {
      *
      * @param update
      * @return String
-     */
+     **/
     Result update(${serviceGenerateInfo.moduleName}Update update);
 
     /**
@@ -36,13 +36,13 @@ public interface ${serviceGenerateInfo.moduleName}Service {
      *
      * @param id
      * @return ${serviceGenerateInfo.moduleName}Detail
-     */
+     **/
     Result${"<"}${serviceGenerateInfo.moduleName}Detail${">"} detail(Integer id);
 
     /**
      * 查询列表
      *
      * @return ${serviceGenerateInfo.moduleName}Brief
-     */
+     **/
     Result${"<List<"}${serviceGenerateInfo.moduleName}Brief${">>"} list(${serviceGenerateInfo.moduleName}Query query);
 }

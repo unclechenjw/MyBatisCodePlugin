@@ -46,7 +46,6 @@ public class CodeGenerate {
         if (configModel.getGenerateControllerService()) {
             new ControllerGenerate(configModel, tableInfo).generate();
             new ServiceGenerate(configModel, tableInfo).generate();
-            new QueryGenerate(configModel, tableInfo).generate();
         }
     }
 }

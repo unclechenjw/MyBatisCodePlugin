@@ -1,18 +1,18 @@
-package ${queryGenerateInfo.basePackage}.param;
+package ${modelGenerateInfo.basePackage}.param;
 
 import com.zimo.commons.global.model.dto.BasePage;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * ${queryGenerateInfo.moduleName}
+ * ${modelGenerateInfo.tableComment}查询
  *
- * @author : ${queryGenerateInfo.author}
- * @date: ${queryGenerateInfo.date}
+ * @author : ${modelGenerateInfo.author}
+ * @date: ${modelGenerateInfo.date}
  **/
 @Getter
 @Setter
-public class ${queryGenerateInfo.moduleName}Query extends BasePage {
+public class ${modelGenerateInfo.moduleName}Query extends BasePage {
 
     /**
      * 查询关键字

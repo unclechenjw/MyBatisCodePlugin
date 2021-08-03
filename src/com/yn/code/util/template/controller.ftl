@@ -11,11 +11,11 @@ import com.zimo.commons.global.model.dto.Result;
 import java.util.List;
 
 /**
-* ${controllerGenerateInfo.moduleName}Controller
-*
-* @author : ${controllerGenerateInfo.author}
-* @date: ${controllerGenerateInfo.date}
-**/
+ * ${controllerGenerateInfo.tableComment}接口
+ *
+ * @author : ${controllerGenerateInfo.author}
+ * @date: ${controllerGenerateInfo.date}
+ **/
 @RestController
 @RequestMapping("${controllerGenerateInfo.baseRequestMapping}")
 public class ${controllerGenerateInfo.moduleName}Controller {
@@ -57,7 +57,7 @@ public class ${controllerGenerateInfo.moduleName}Controller {
     }
 
     /**
-     * 查询列表
+     * 列表
      *
      * @param :
      * @return: Result${"<List<"}${controllerGenerateInfo.moduleName}Simple${">>"}
