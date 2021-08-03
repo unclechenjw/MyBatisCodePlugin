@@ -1,6 +1,5 @@
 package ${modelGenerateInfo.basePackage}.param;
 
-import com.zimo.commons.global.model.dto.BasePage;
 import lombok.Getter;
 import lombok.Setter;
 
