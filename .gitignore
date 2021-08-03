@@ -1,5 +1,5 @@
 out
 *.log
 *.zip
-*.iml
-.idea
+#*.iml
+#.idea

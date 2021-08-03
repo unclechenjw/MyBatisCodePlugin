@@ -57,7 +57,6 @@ public class ${serviceGenerateInfo.moduleName}ServiceImpl implements ${serviceGe
 
     @Override
     public Result${"<"}${serviceGenerateInfo.moduleName}Detail${">"} detail(Integer id) {
-        // TODO 替换返回结果DTO，简化字段，仅保留前端所需要展示的字段
         return Result.success(${serviceGenerateInfo.moduleNameLower}Mapper.queryByID(id));
     }
 
