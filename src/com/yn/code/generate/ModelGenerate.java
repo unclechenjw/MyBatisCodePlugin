@@ -26,9 +26,9 @@ public class ModelGenerate {
     public void generate() throws MyException{
         ModelGenerateInfo modelGenerateInfo = new ModelGenerateInfo();
         modelGenerateInfo.setAuthor(configModel.getAuthor());
-        modelGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getModelPath()));
+        modelGenerateInfo.setModuleName(CommonUtil.getNameUpperCamel(configModel.getSign()));
+        modelGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getModelPath()) + "/po");
         modelGenerateInfo.setDate(new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new Date()));
-        modelGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
         modelGenerateInfo.setTableComment(tableInfo.getTableComment());
         modelGenerateInfo.setTableName(tableInfo.getTableName());
         List<ModelGenerateColumnInfo> modelGenerateColumnInfos = new ArrayList<>();
@@ -49,7 +49,7 @@ public class ModelGenerate {
         modelGenerateInfo.setImportList(importList);
         Map<String, Object> root = new HashMap<>(1);
         root.put("modelGenerateInfo", modelGenerateInfo);
-        String fileName = CommonUtil.getNameUpperCamel(configModel.getTableName()) + ".java";
-        FreeMarkUtil.generateFile(root, "model.ftl", configModel.getModelPath(), fileName);
+        String fileName = CommonUtil.getNameUpperCamel(modelGenerateInfo.getModuleName()) + "PO.java";
+        FreeMarkUtil.generateFile(root, "model/po.ftl", configModel.getModelPath(), fileName);
     }
 }

@@ -1,23 +1,24 @@
-package ${modelGenerateInfo.basePackage};
-
+package ${modelGenerateInfo.basePackage}.po;
 
 import lombok.*;
 <#list modelGenerateInfo.importList as import>
 import ${import};
 </#list>
 
+import java.time.LocalDateTime;
+
 /**
  * ${modelGenerateInfo.tableComment}
  * 表：  ${modelGenerateInfo.tableName}
  * @author  ${modelGenerateInfo.author}
  * @date ${modelGenerateInfo.date}
- */
+ **/
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ${modelGenerateInfo.modelNameUpperCamel} {
+public class ${modelGenerateInfo.moduleName}PO {
     <#list modelGenerateInfo.columnList as column>
 
     /** ${column.columnComment} */

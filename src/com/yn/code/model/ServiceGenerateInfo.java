@@ -10,6 +10,8 @@ package com.yn.code.model;
  **/
 public class ServiceGenerateInfo {
     private String basePackage;
+    private String moduleName;
+    private String moduleNameLower;
     private String tableComment;
     private String tableName;
     private String author;
@@ -99,5 +101,21 @@ public class ServiceGenerateInfo {
 
     public void setServicePackage(String servicePackage) {
         this.servicePackage = servicePackage;
+    }
+
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
+    public String getModuleNameLower() {
+        return moduleNameLower;
+    }
+
+    public void setModuleNameLower(String moduleNameLower) {
+        this.moduleNameLower = moduleNameLower;
     }
 }

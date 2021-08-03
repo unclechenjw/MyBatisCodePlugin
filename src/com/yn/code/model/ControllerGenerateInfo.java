@@ -9,12 +9,15 @@ package com.yn.code.model;
  **/
 public class ControllerGenerateInfo {
     private String basePackage;
+    private String moduleName;
+    private String moduleNameLower;
     private String tableComment;
     private String tableName;
     private String author;
     private String date;
     private String modelNameUpperCamel;
     private String modelNameLowerCamel;
+    private String queryObjectName;
     private String baseRequestMapping;
     private String servicePackage;
     private String modelPackage;
@@ -97,5 +100,29 @@ public class ControllerGenerateInfo {
 
     public void setModelPackage(String modelPackage) {
         this.modelPackage = modelPackage;
+    }
+
+    public String getQueryObjectName() {
+        return queryObjectName;
+    }
+
+    public void setQueryObjectName(String queryObjectName) {
+        this.queryObjectName = queryObjectName;
+    }
+
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
+    public String getModuleNameLower() {
+        return moduleNameLower;
+    }
+
+    public void setModuleNameLower(String moduleNameLower) {
+        this.moduleNameLower = moduleNameLower;
     }
 }

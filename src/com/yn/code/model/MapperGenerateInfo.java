@@ -12,6 +12,7 @@ import java.util.List;
 
 public class MapperGenerateInfo {
     private String basePackage;
+    private String moduleName;
     private String modelPath;
     private String modelNameUpperCamel;
     private String tableComment;
@@ -136,5 +137,13 @@ public class MapperGenerateInfo {
 
     public void setColumnList(List<MapperGenerateColumnInfo> columnList) {
         this.columnList = columnList;
+    }
+
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
     }
 }

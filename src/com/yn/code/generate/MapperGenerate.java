@@ -24,6 +24,7 @@ public class MapperGenerate {
     public void generate() throws MyException{
         MapperGenerateInfo mapperGenerateInfo = new MapperGenerateInfo();
         mapperGenerateInfo.setAuthor(configModel.getAuthor());
+        mapperGenerateInfo.setModuleName(CommonUtil.getNameUpperCamel(configModel.getSign()));
         mapperGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getMapperJavaPath()));
         mapperGenerateInfo.setDate(new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new Date()));
         mapperGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
@@ -51,8 +52,8 @@ public class MapperGenerate {
         mapperGenerateInfo.setColumnList(mapperGenerateColumnInfos);
         Map<String, Object> root = new HashMap<>(1);
         root.put("mapperGenerateInfo", mapperGenerateInfo);
-        String mapperFileName = CommonUtil.getNameUpperCamel(configModel.getTableName()) + "Mapper.java";
-        String mapperXmlFileName = CommonUtil.getNameUpperCamel(configModel.getTableName()) + "Mapper.xml";
+        String mapperFileName = mapperGenerateInfo.getModuleName() + "Mapper.java";
+        String mapperXmlFileName = mapperGenerateInfo.getModuleName() + "Mapper.xml";
         FreeMarkUtil.generateFile(root, "mapper.ftl", configModel.getMapperJavaPath(), mapperFileName);
         FreeMarkUtil.generateFile(root, "mapperxml.ftl", configModel.getMapperXmlPath(), mapperXmlFileName);
     }

@@ -1,6 +1,9 @@
 package ${mapperGenerateInfo.basePackage};
 
-import ${mapperGenerateInfo.modelPath}.${mapperGenerateInfo.modelNameUpperCamel};
+import ${mapperGenerateInfo.modelPath}.po.${mapperGenerateInfo.moduleName}PO;
+import ${mapperGenerateInfo.modelPath}.param.${mapperGenerateInfo.moduleName}Query;
+import ${mapperGenerateInfo.modelPath}.dto.${mapperGenerateInfo.moduleName}Brief;
+import ${mapperGenerateInfo.modelPath}.dto.${mapperGenerateInfo.moduleName}Detail;
 import java.util.List;
 
 /**
@@ -10,7 +13,7 @@ import java.util.List;
  * @author  ${mapperGenerateInfo.author}
  * @date ${mapperGenerateInfo.date}
  */
-public interface ${mapperGenerateInfo.modelNameUpperCamel}Mapper {
+public interface ${mapperGenerateInfo.moduleName}Mapper {
 
     /**
      * 全字段新增
@@ -18,7 +21,7 @@ public interface ${mapperGenerateInfo.modelNameUpperCamel}Mapper {
      * @param insert
      * @return 新增条数
      */
-    int insert(${mapperGenerateInfo.modelNameUpperCamel} insert);
+    int insert(${mapperGenerateInfo.moduleName}PO insert);
 
     /**
      * 根据主键动态修改
@@ -26,20 +29,20 @@ public interface ${mapperGenerateInfo.modelNameUpperCamel}Mapper {
      * @param update
      * @return 修改条数
      */
-    int update(${mapperGenerateInfo.modelNameUpperCamel} update);
+    int update(${mapperGenerateInfo.moduleName}PO update);
 
     /**
      * 根据主键查询
      *
      * @param id
-     * @return ${mapperGenerateInfo.modelNameUpperCamel}
+     * @return ${mapperGenerateInfo.moduleName}
      */
-    ${mapperGenerateInfo.modelNameUpperCamel} queryByID(${mapperGenerateInfo.primaryKeyJavaTypeName} id);
+    ${mapperGenerateInfo.moduleName}Detail queryByID(${mapperGenerateInfo.primaryKeyJavaTypeName} id);
 
     /**
      * 查询列表
      *
-     * @return ${mapperGenerateInfo.modelNameUpperCamel}
+     * @return ${mapperGenerateInfo.moduleName}
      */
-    List<${mapperGenerateInfo.modelNameUpperCamel}> queryList();
+    List<${mapperGenerateInfo.moduleName}${"Brief>"} queryList(${mapperGenerateInfo.moduleName}Query query);
 }

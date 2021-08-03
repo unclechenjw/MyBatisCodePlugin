@@ -10,6 +10,7 @@ import java.util.List;
  **/
 public class ModelGenerateInfo {
     private String basePackage;
+    private String moduleName;
     private String tableComment;
     private String tableName;
     private String author;
@@ -80,5 +81,13 @@ public class ModelGenerateInfo {
 
     public void setImportList(List<String> importList) {
         this.importList = importList;
+    }
+
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
     }
 }

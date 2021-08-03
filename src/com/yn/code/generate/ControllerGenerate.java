@@ -26,19 +26,22 @@ public class ControllerGenerate {
     public void generate() throws MyException{
         ControllerGenerateInfo controllerGenerateInfo = new ControllerGenerateInfo();
         controllerGenerateInfo.setAuthor(configModel.getAuthor());
+        controllerGenerateInfo.setModuleName(CommonUtil.getNameUpperCamel(configModel.getSign()));
+        controllerGenerateInfo.setModuleNameLower(CommonUtil.getNameLowerCamel(configModel.getSign()));
         controllerGenerateInfo.setBasePackage(CommonUtil.getPackageNameByPath(configModel.getControllerPath()));
         controllerGenerateInfo.setServicePackage(CommonUtil.getPackageNameByPath(configModel.getServicePath()));
         controllerGenerateInfo.setModelPackage(CommonUtil.getPackageNameByPath(configModel.getModelPath()));
         controllerGenerateInfo.setDate(new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new Date()));
-        controllerGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
-        controllerGenerateInfo.setModelNameLowerCamel(CommonUtil.getNameLowerCamel(tableInfo.getTableName()));
-        controllerGenerateInfo.setTableComment(tableInfo.getTableComment());
-        controllerGenerateInfo.setTableName(tableInfo.getTableName());
+//        controllerGenerateInfo.setModelNameUpperCamel(CommonUtil.getNameUpperCamel(tableInfo.getTableName()));
+//        controllerGenerateInfo.setModelNameLowerCamel(CommonUtil.getNameLowerCamel(tableInfo.getTableName()));
+//        controllerGenerateInfo.setQueryObjectNameLowerCamel(CommonUtil.getNameLowerCamel(configModel.getSign())+"Query");
+//        controllerGenerateInfo.setTableComment(tableInfo.getTableComment());
+//        controllerGenerateInfo.setTableName(tableInfo.getTableName());
         controllerGenerateInfo.setBaseRequestMapping(configModel.getSign());
 
         Map<String, Object> root = new HashMap<>(1);
         root.put("controllerGenerateInfo", controllerGenerateInfo);
-        String fileName = CommonUtil.getNameUpperCamel(configModel.getTableName()) + "Controller.java";
+        String fileName = controllerGenerateInfo.getModuleName() + "Controller.java";
         FreeMarkUtil.generateFile(root, "controller.ftl", configModel.getControllerPath(), fileName);
     }
 }

@@ -319,8 +319,8 @@ public class ToolWindowUI {
                 propertiesComponentProject.setValue("modelPath",modelPath);
                 propertiesComponentProject.setValue("controllerPath",controllerPath);
                 propertiesComponentProject.setValue("servicePath",servicePath);
-                propertiesComponentProject.setValue("modelPath",modelPath);
                 propertiesComponentProject.setValue("mapperPath",mapperPath);
+                propertiesComponentProject.setValue("modelPath",modelPath);
                 propertiesComponent.setValue("author",author);
 
                 ConfigModel configModel = new ConfigModel();

@@ -1,49 +1,69 @@
 package ${serviceGenerateInfo.basePackage}.impl;
 
-import ${serviceGenerateInfo.mapperPackage}.${serviceGenerateInfo.modelNameUpperCamel}Mapper;
-import ${serviceGenerateInfo.modelPackage}.${serviceGenerateInfo.modelNameUpperCamel};
-import ${serviceGenerateInfo.servicePackage}.${serviceGenerateInfo.modelNameUpperCamel}Service;
-import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
+import ${serviceGenerateInfo.servicePackage}.${serviceGenerateInfo.moduleName}Service;
+import ${serviceGenerateInfo.mapperPackage}.${serviceGenerateInfo.moduleName}Mapper;
+import ${serviceGenerateInfo.modelPackage}.po.${serviceGenerateInfo.moduleName}PO;
+import ${serviceGenerateInfo.modelPackage}.param.${serviceGenerateInfo.moduleName}Query;
+import ${serviceGenerateInfo.modelPackage}.param.${serviceGenerateInfo.moduleName}Insert;
+import ${serviceGenerateInfo.modelPackage}.param.${serviceGenerateInfo.moduleName}Update;
+import ${serviceGenerateInfo.modelPackage}.dto.${serviceGenerateInfo.moduleName}Brief;
+import ${serviceGenerateInfo.modelPackage}.dto.${serviceGenerateInfo.moduleName}Detail;
+import com.zimo.session.app.SessionUtil;
 import com.zimo.commons.global.model.dto.Result;
 import com.zimo.commons.global.util.PageUtil;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
-* ${serviceGenerateInfo.modelNameUpperCamel}ServiceImpl
+* ${serviceGenerateInfo.moduleName}ServiceImpl
 *
 * @author : ${serviceGenerateInfo.author}
 * @date: ${serviceGenerateInfo.date}
 **/
 @Service
-public class ${serviceGenerateInfo.modelNameUpperCamel}ServiceImpl implements ${serviceGenerateInfo.modelNameUpperCamel}Service {
+public class ${serviceGenerateInfo.moduleName}ServiceImpl implements ${serviceGenerateInfo.moduleName}Service {
 
     @Autowired
-    private ${serviceGenerateInfo.modelNameUpperCamel}Mapper ${serviceGenerateInfo.modelNameLowerCamel}Mapper;
+    private ${serviceGenerateInfo.moduleName}Mapper ${serviceGenerateInfo.moduleNameLower}Mapper;
 
     @Override
-    public Result insert(${serviceGenerateInfo.modelNameUpperCamel} insert) {
-        // TODO 替换DTO简化参数，使用BeanUtils.copyProperties(insert, po);复制属性
-        ${serviceGenerateInfo.modelNameLowerCamel}Mapper.insert(insert);
+    public Result insert(${serviceGenerateInfo.moduleName}Insert insert) {
+        ${serviceGenerateInfo.moduleName}PO ${serviceGenerateInfo.moduleNameLower}PO = ${serviceGenerateInfo.moduleName}PO.builder()
+                .createTime(LocalDateTime.now())
+                .createUserId(SessionUtil.getUserId())
+                .createUserName(SessionUtil.getUserName())
+                .build();
+        BeanUtils.copyProperties(insert, ${serviceGenerateInfo.moduleNameLower}PO);
+        ${serviceGenerateInfo.moduleNameLower}Mapper.insert(${serviceGenerateInfo.moduleNameLower}PO);
         return Result.success("新增成功");
     }
 
     @Override
-    public Result update(${serviceGenerateInfo.modelNameUpperCamel} update) {
-        // TODO 同上
-        ${serviceGenerateInfo.modelNameLowerCamel}Mapper.update(update);
+    public Result update(${serviceGenerateInfo.moduleName}Update update) {
+        ${serviceGenerateInfo.moduleName}PO ${serviceGenerateInfo.moduleNameLower}PO = ${serviceGenerateInfo.moduleName}PO.builder()
+                .updateTime(LocalDateTime.now())
+                .updateUserId(SessionUtil.getUserId())
+                .updateUserName(SessionUtil.getUserName())
+                .build();
+        BeanUtils.copyProperties(update, ${serviceGenerateInfo.moduleNameLower}PO);
+        ${serviceGenerateInfo.moduleNameLower}Mapper.update(${serviceGenerateInfo.moduleNameLower}PO);
         return Result.success("修改成功");
     }
 
     @Override
-    public Result${"<"}${serviceGenerateInfo.modelNameUpperCamel}${">"} detail(Integer id) {
-        // TODO 替换DTO简化参数，仅保留前端需要展示字段
-        return Result.success(${serviceGenerateInfo.modelNameLowerCamel}Mapper.queryByID(id));
+    public Result${"<"}${serviceGenerateInfo.moduleName}Detail${">"} detail(Integer id) {
+        // TODO 替换返回结果DTO，简化字段，仅保留前端所需要展示的字段
+        return Result.success(${serviceGenerateInfo.moduleNameLower}Mapper.queryByID(id));
     }
 
     @Override
-    public Result${"<List<"}${serviceGenerateInfo.modelNameUpperCamel}${">>"} list() {
-        // 分页PageUtil.startPage(query);
-        return Result.success(${serviceGenerateInfo.modelNameLowerCamel}Mapper.queryList());
+    public Result${"<List<"}${serviceGenerateInfo.moduleName}Brief${">>"} list(${serviceGenerateInfo.moduleName}Query query) {
+        PageUtil.startPage(query);
+        return Result.success(${serviceGenerateInfo.moduleNameLower}Mapper.queryList(query));
     }
 }

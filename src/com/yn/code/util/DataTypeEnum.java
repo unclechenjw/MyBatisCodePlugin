@@ -1,7 +1,8 @@
 package com.yn.code.util;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public enum DataTypeEnum {
     ARRAY("array", "ARRAY", Object.class.getName(), "Object"),
@@ -13,8 +14,8 @@ public enum DataTypeEnum {
     CHAR("char", "CHAR", String.class.getName(), "String"),
     CLOB("clob", "CLOB", String.class.getName(), "String"),
     DATALINK("datalink", "DATALINK", Object.class.getName(), "Object"),
-    DATE("date", "DATE", Date.class.getName(), "Date"),
-    DATETIME("datetime", "DATETIME", Date.class.getName(), "Date"),
+    DATE("date", "DATE", LocalDate.class.getName(), "LocalDate"),
+    DATETIME("datetime", "DATETIME", LocalDateTime.class.getName(), "LocalDateTime"),
     DECIMAL("decimal", "DECIMAL", BigDecimal.class.getName(), "BigDecimal"),
     DISTINCT("distinct", "DISTINCT", Object.class.getName(), "Object"),
     DOUBLE("double", "DOUBLE", Double.class.getName(), "Double"),
@@ -34,8 +35,8 @@ public enum DataTypeEnum {
     REF("ref", "REF", Object.class.getName(), "Object"),
     SMALLINT("smallint", "SMALLINT", Integer.class.getName(), "Integer"),
     STRUCT("struct", "STRUCT", Object.class.getName(), "Object"),
-    TIME("time", "TIME", Date.class.getName(), "Date"),
-    TIMESTAMP("timestamp", "TIMESTAMP", Date.class.getName(), "Date"),
+    TIME("time", "TIME", LocalDateTime.class.getName(), "LocalDateTime"),
+    TIMESTAMP("timestamp", "TIMESTAMP", LocalDateTime.class.getName(), "LocalDateTime"),
     TINYINT("tinyint", "TINYINT", Integer.class.getName(), "Integer"),
     VARBINARY("varbinary", "VARBINARY", "byte[]", "byte[]"),
     VARCHAR("varchar", "VARCHAR", String.class.getName(), "String"),
