@@ -17,7 +17,7 @@ import java.util.List;
  * @date: ${controllerGenerateInfo.date}
  **/
 @RestController
-@RequestMapping("${controllerGenerateInfo.baseRequestMapping}")
+@RequestMapping("${controllerGenerateInfo.moduleName}")
 public class ${controllerGenerateInfo.moduleName}Controller {
 
     @Autowired

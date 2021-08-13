@@ -42,6 +42,7 @@ public interface ${serviceGenerateInfo.moduleName}Service {
     /**
      * 查询列表
      *
+     * @param query
      * @return ${serviceGenerateInfo.moduleName}Brief
      **/
     Result${"<List<"}${serviceGenerateInfo.moduleName}Brief${">>"} list(${serviceGenerateInfo.moduleName}Query query);
