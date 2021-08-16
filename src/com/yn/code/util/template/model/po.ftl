@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 public class ${modelGenerateInfo.moduleName}PO {
     <#list modelGenerateInfo.columnList as column>
 
