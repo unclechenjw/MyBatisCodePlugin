@@ -44,7 +44,10 @@ public class ModelGenerate {
             modelGenerateColumnInfo.setColumnComment(tableColumn.getColumnComment());
             modelGenerateColumnInfo.setColumnJavaTypeName(javaTypeName);
             modelGenerateColumnInfo.setColumnCamelName(CommonUtil.getNameLowerCamel(tableColumn.getColumnName()));
+            modelGenerateColumnInfo.setNullable(tableColumn.getNullable());
+            modelGenerateColumnInfo.setCharacterMaximumLength(tableColumn.getCharacterMaximumLength());
             modelGenerateColumnInfos.add(modelGenerateColumnInfo);
+
             String columnJavaTypeName = DataTypeEnum.getJavaTypeByDataType(tableColumn.getDataType());
             if (CommonUtil.isNeedImport(javaTypeName) && !importList.contains(columnJavaTypeName)) {
                 importList.add(columnJavaTypeName);

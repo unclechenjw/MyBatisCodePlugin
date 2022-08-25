@@ -8,9 +8,26 @@ package com.yn.code.model;
  **/
 
 public class ModelGenerateColumnInfo {
+    /**
+     * 字段注释
+     */
     private String columnComment;
+    /**
+     * 字段类型名称
+     */
     private String columnJavaTypeName;
+    /**
+     * 驼峰名
+     */
     private String columnCamelName;
+    /**
+     * 允许为空
+     */
+    private String nullable;
+    /**
+     * 字符最大长度
+     */
+    private String characterMaximumLength;
 
     public String getColumnComment() {
         return columnComment;
@@ -34,5 +51,21 @@ public class ModelGenerateColumnInfo {
 
     public void setColumnCamelName(String columnCamelName) {
         this.columnCamelName = columnCamelName;
+    }
+
+    public String getCharacterMaximumLength() {
+        return characterMaximumLength;
+    }
+
+    public String getNullable() {
+        return nullable;
+    }
+
+    public void setNullable(String nullable) {
+        this.nullable = nullable;
+    }
+
+    public void setCharacterMaximumLength(String characterMaximumLength) {
+        this.characterMaximumLength = characterMaximumLength;
     }
 }

@@ -65,7 +65,7 @@ public class TableUtil {
     public List<TableColumn> getTableColumns(String tableName) throws MyException{
         JDBCUtil jdbcUtil = new JDBCUtil(host,database,user,pwd);
         StringBuilder sql = new StringBuilder()
-                .append("SELECT column_name,column_comment,data_type,column_key FROM information_schema.columns")
+                .append("SELECT column_name,column_comment,data_type,column_key,is_nullable,character_maximum_length FROM information_schema.columns")
                 .append(" WHERE table_schema = '").append(database)
                 .append("' AND table_name = '").append(tableName).append("'");
         List<TableColumn> tableColumns = new ArrayList<>();
@@ -76,6 +76,9 @@ public class TableUtil {
                 tableColumn.setColumnName(resultSet.getString("column_name"));
                 tableColumn.setColumnComment(resultSet.getString("column_comment"));
                 tableColumn.setDataType(resultSet.getString("data_type"));
+                tableColumn.setCharacterMaximumLength(resultSet.getString("character_maximum_length"));
+                tableColumn.setNullable(resultSet.getString("is_nullable"));
+
                 if("PRI".equals(resultSet.getString("column_key"))){
                     tableColumn.setPrimaryKey(true);
                 }else {

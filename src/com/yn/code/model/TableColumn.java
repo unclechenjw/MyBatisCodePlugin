@@ -27,6 +27,15 @@ public class TableColumn {
      */
     private boolean isPrimaryKey;
 
+    /**
+     * 允许为空
+     */
+    private String nullable;
+    /**
+     * 字符最大长度
+     */
+    private String characterMaximumLength;
+
     public String getColumnName() {
         return columnName;
     }
@@ -57,5 +66,21 @@ public class TableColumn {
 
     public void setPrimaryKey(boolean primaryKey) {
         isPrimaryKey = primaryKey;
+    }
+
+    public String getCharacterMaximumLength() {
+        return characterMaximumLength;
+    }
+
+    public void setCharacterMaximumLength(String characterMaximumLength) {
+        this.characterMaximumLength = characterMaximumLength;
+    }
+
+    public String getNullable() {
+        return nullable;
+    }
+
+    public void setNullable(String nullable) {
+        this.nullable = nullable;
     }
 }

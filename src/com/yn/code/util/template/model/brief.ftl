@@ -2,6 +2,10 @@ package ${modelGenerateInfo.basePackage}.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+<#list modelGenerateInfo.importList as import>
+import ${import};
+</#list>
+import java.time.LocalDateTime;
 
 /**
  * ${modelGenerateInfo.tableComment}摘要
@@ -13,5 +17,10 @@ import lombok.Setter;
 @Setter
 public class ${modelGenerateInfo.moduleName}Brief {
 
-    // TODO 补充需要字段，删除无用的类、字段
+    // TODO 删除无用的类、字段
+<#list modelGenerateInfo.columnList as column>
+
+   /** ${column.columnComment} */
+   private ${column.columnJavaTypeName} ${column.columnCamelName};
+</#list>
 }

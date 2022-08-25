@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="${mapperGenerateInfo.basePackage}.${mapperGenerateInfo.moduleName}Mapper">
 
-    <insert id="insert" parameterType="${mapperGenerateInfo.modelPath}.po.${mapperGenerateInfo.moduleName}PO" keyProperty="${mapperGenerateInfo.primaryKey}" useGeneratedKeys="true">
+    <insert id="insert" parameterType="${mapperGenerateInfo.modelPath}.po.${mapperGenerateInfo.moduleName}PO" keyProperty="${mapperGenerateInfo.primaryKeyCamel}" useGeneratedKeys="true">
         INSERT INTO ${mapperGenerateInfo.tableName}
             (<#list mapperGenerateInfo.columnList as column><#if mapperGenerateInfo.primaryKey != column.columnName><#if column_has_next>${column.columnName},<#else>${column.columnName}</#if></#if><#if (column_index+1)%5 == 0>${"\n             "}</#if></#list>)
         VALUES (

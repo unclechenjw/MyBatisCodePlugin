@@ -26,8 +26,8 @@ public class ${controllerGenerateInfo.moduleName}Controller {
     /**
      * 新增
      *
-     * @param : insert
-     * @return: Result
+     * @param insert
+     * @return Result
      **/
     @PostMapping
     public Result insert(@RequestBody ${controllerGenerateInfo.moduleName}Insert insert) {
@@ -37,8 +37,8 @@ public class ${controllerGenerateInfo.moduleName}Controller {
     /**
      * 更新
      *
-     * @param : update
-     * @return: Result
+     * @param update
+     * @return Result
      **/
     @PutMapping
     public Result update(@RequestBody ${controllerGenerateInfo.moduleName}Update update) {
@@ -48,8 +48,8 @@ public class ${controllerGenerateInfo.moduleName}Controller {
     /**
      * 详情
      *
-     * @param : id
-     * @return: Result${"<"}${controllerGenerateInfo.moduleName}Detail${">"}
+     * @param id
+     * @return Result${"<"}${controllerGenerateInfo.moduleName}Detail${">"}
      **/
     @GetMapping("{id}")
     public Result${"<"}${controllerGenerateInfo.moduleName}Detail${">"} detail(@PathVariable("id") Integer id) {
@@ -59,8 +59,8 @@ public class ${controllerGenerateInfo.moduleName}Controller {
     /**
      * 列表
      *
-     * @param :
-     * @return: Result${"<List<"}${controllerGenerateInfo.moduleName}Simple${">>"}
+     * @param query
+     * @return Result${"<List<"}${controllerGenerateInfo.moduleName}Simple${">>"}
      **/
     @GetMapping
     public Result${"<List<"}${controllerGenerateInfo.moduleName}Brief${">>"} list(${controllerGenerateInfo.moduleName}Query query) {
