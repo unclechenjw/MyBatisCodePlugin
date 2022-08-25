@@ -10,17 +10,17 @@ import java.time.LocalDateTime;
 /**
  * ${modelGenerateInfo.tableComment}摘要
  *
- * @author : ${modelGenerateInfo.author}
- * @date: ${modelGenerateInfo.date}
+ * @author ${modelGenerateInfo.author}
+ * @date ${modelGenerateInfo.date}
  **/
 @Getter
 @Setter
 public class ${modelGenerateInfo.moduleName}Brief {
 
-    // TODO 删除无用的类、字段
+    // TODO 记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；
 <#list modelGenerateInfo.columnList as column>
 
-   /** ${column.columnComment} */
-   private ${column.columnJavaTypeName} ${column.columnCamelName};
+    /** ${column.columnComment} */
+    private ${column.columnJavaTypeName} ${column.columnCamelName};
 </#list>
 }

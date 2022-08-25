@@ -10,7 +10,7 @@ import java.util.List;
  * ${mapperGenerateInfo.tableComment}
  *
  * 表名：  ${mapperGenerateInfo.tableName}
- * @author  ${mapperGenerateInfo.author}
+ * @author ${mapperGenerateInfo.author}
  * @date ${mapperGenerateInfo.date}
  */
 public interface ${mapperGenerateInfo.moduleName}Mapper {

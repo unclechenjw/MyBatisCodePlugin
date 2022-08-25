@@ -13,11 +13,11 @@ import java.util.List;
 /**
  * ${controllerGenerateInfo.tableComment}接口
  *
- * @author : ${controllerGenerateInfo.author}
- * @date: ${controllerGenerateInfo.date}
+ * @author ${controllerGenerateInfo.author}
+ * @date ${controllerGenerateInfo.date}
  **/
 @RestController
-@RequestMapping("${controllerGenerateInfo.moduleName}")
+@RequestMapping("${controllerGenerateInfo.moduleNameLower}")
 public class ${controllerGenerateInfo.moduleName}Controller {
 
     @Autowired

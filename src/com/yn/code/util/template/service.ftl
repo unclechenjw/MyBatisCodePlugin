@@ -10,8 +10,8 @@ import java.util.List;
 /**
  * ${serviceGenerateInfo.tableComment}服务
  *
- * @author : ${serviceGenerateInfo.author}
- * @date: ${serviceGenerateInfo.date}
+ * @author ${serviceGenerateInfo.author}
+ * @date ${serviceGenerateInfo.date}
  **/
 public interface ${serviceGenerateInfo.moduleName}Service {
 

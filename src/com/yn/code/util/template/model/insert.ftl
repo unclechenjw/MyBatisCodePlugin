@@ -13,14 +13,16 @@ import javax.validation.constraints.NotNull;
 /**
  * ${modelGenerateInfo.tableComment}创建
  *
- * @author : ${modelGenerateInfo.author}
- * @date: ${modelGenerateInfo.date}
+ * @author ${modelGenerateInfo.author}
+ * @date ${modelGenerateInfo.date}
  **/
 @Getter
 @Setter
 public class ${modelGenerateInfo.moduleName}Insert {
 
+    // TODO 记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；
 <#list modelGenerateInfo.columnList as column>
+
     /** ${column.columnComment} */
     <#if column.nullable == 'NO'>
     @NotNull(message = "${column.columnComment}不能为空")

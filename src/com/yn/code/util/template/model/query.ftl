@@ -7,8 +7,8 @@ import lombok.Setter;
 /**
  * ${modelGenerateInfo.tableComment}查询
  *
- * @author : ${modelGenerateInfo.author}
- * @date: ${modelGenerateInfo.date}
+ * @author ${modelGenerateInfo.author}
+ * @date ${modelGenerateInfo.date}
  **/
 @Getter
 @Setter

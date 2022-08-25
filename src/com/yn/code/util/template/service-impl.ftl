@@ -22,8 +22,8 @@ import java.util.List;
 /**
  * ${serviceGenerateInfo.tableComment}服务
  *
- * @author : ${serviceGenerateInfo.author}
- * @date: ${serviceGenerateInfo.date}
+ * @author ${serviceGenerateInfo.author}
+ * @date ${serviceGenerateInfo.date}
  **/
 @Service
 public class ${serviceGenerateInfo.moduleName}ServiceImpl implements ${serviceGenerateInfo.moduleName}Service {
