@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class ${modelGenerateInfo.moduleName}Update {
 
-// TODO 记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；
+    // TODO 记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；记得删除无用字段；
 <#list modelGenerateInfo.columnList as column>
 
     /** ${column.columnComment} */
